@@ -8,6 +8,7 @@ import sys
 import re
 import json
 from keys import *
+import pprint
 count = 0
 
 
@@ -20,11 +21,11 @@ class listener(StreamListener):
 		global count
 		x = json.dumps(data)
 		y = json.loads(data)
-		print(y)
+		# pprint.pprint(y)
 		#print(count)
-		# printX()
+		print(y)
 		count = count + 1
-		if count == 100000:
+		if count == 100:
 			exit(0)
 		return (True)
 
